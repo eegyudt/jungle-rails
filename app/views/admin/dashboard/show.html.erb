@@ -1,13 +1,10 @@
-<h1>Admin::Dashboard#show</h1>
-<p><%= link_to "Number of products:", [:admin, :products] %>
-  <%= @product_count %>
-</p>
-<p><%= link_to "Number of categories:", root_path %>
-<%= @categories_count %>
-</p> 
-<p>
-<%# <%= link_to "Go back the main page", root_path %>
-</p>
-<p>
-<%# <%= link_to "Go to the admin products page", [:admin, :products] %>
+<h1>Admin Dashboard</h1>
+
+<p class=dashboard>
+  <p class="shadow-lg p-3 mb-5 bg-white rounded dash-link"><%= link_to "Number of products:", [:admin, :products] %>
+      <%= @product_count %>
+  </p>
+  <p class="shadow-lg p-3 mb-5 bg-white rounded dash-link"><%= link_to "Number of categories:", [:admin, :categories] %>
+  <%= @categories_count %>
+  </p> 
 </p>

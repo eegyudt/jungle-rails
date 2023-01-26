@@ -62,6 +62,7 @@
           <ul class="dropdown-menu dropdown-menu-dark">
             <li><%= link_to 'Dashboard', [:admin, :root], class: "nav-link" %></li>
             <li><%= link_to 'Products', [:admin, :products], class: "nav-link" %></li>
+            <li><%= link_to 'Categories', [:admin, :categories], class: "nav-link" %></li>
           </ul>
         </li>
         <li class="nav-item end-0">
@@ -84,7 +85,7 @@ const gnr = () => {
     uptitle.style.textAlign = "center";
 
     subtitle.innerHTML =
-      "<p>Watch it bring you to your</p><p> shu-n-n-n-n-n-n-n-n knees, knees!</p>";
+      "<p>We are the bees knees!</p>";
   };
   const title = document.querySelector("header.hero");
   title.addEventListener("dblclick", gnr);
