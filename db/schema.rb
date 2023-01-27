@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_26_062916) do
+ActiveRecord::Schema.define(version: 2023_01_27_020735) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,20 @@ ActiveRecord::Schema.define(version: 2021_06_26_062916) do
     t.index ["product_id"], name: "index_line_items_on_product_id"
   end
 
+  create_table "menu_items", id: :serial, force: :cascade do |t|
+    t.text "name", null: false
+    t.integer "price", null: false
+    t.text "ingredients"
+    t.boolean "inventory", default: true, null: false
+    t.string "food_photo_url", limit: 255, null: false
+  end
+
+  create_table "ordered_items", id: :serial, force: :cascade do |t|
+    t.integer "order_id"
+    t.integer "menu_id"
+    t.integer "quantity", null: false
+  end
+
   create_table "orders", force: :cascade do |t|
     t.integer "total_cents"
     t.datetime "created_at", precision: 6, null: false
@@ -53,7 +67,17 @@ ActiveRecord::Schema.define(version: 2021_06_26_062916) do
     t.index ["category_id"], name: "index_products_on_category_id"
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.string "password_digest"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   add_foreign_key "line_items", "orders"
   add_foreign_key "line_items", "products"
+  add_foreign_key "ordered_items", "menu_items", column: "menu_id", name: "ordered_items_menu_id_fkey", on_delete: :cascade
   add_foreign_key "products", "categories"
 end
