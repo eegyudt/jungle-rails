@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 
   has_secure_password
-  
+
   validates :email, presence: true, uniqueness: { case_sensitive: false }
   validates :password, presence: true, length: { minimum: 5}
   validates :password_confirmation, presence: true
@@ -11,8 +11,12 @@ class User < ActiveRecord::Base
   def self.authenticate_with_credentials(email, password)
     if(email)
       user = User.find_by_email(email.strip.downcase)
-      if user && user.authenticate(password)
-        user
+      if user 
+        if user.authenticate(password)
+          user
+        else
+          nil
+        end
       else
         nil
       end
@@ -20,5 +24,4 @@ class User < ActiveRecord::Base
       nil
     end
   end
-
 end

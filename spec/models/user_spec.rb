@@ -45,7 +45,7 @@ RSpec.describe User, type: :model do
       expect(user2).to_not be_valid
     end
 
-    it "should have an password of at least 8 characters" do
+    it "should have an password of at least 5 characters" do
       user = User.create(first_name: "Red", last_name: "Ridinghood", email:  "test@test.com", password: "password", password_confirmation: "pass")
       expect(user).to_not be_valid
     end
@@ -58,7 +58,7 @@ RSpec.describe User, type: :model do
       authenticate = User.authenticate_with_credentials(user.email, user.password)
       expect(authenticate).to eq(user)
     end
-    
+
     it "should have a valid email address if space is added" do
       user = User.create(first_name: "Red", last_name: "Ridinghood", email: "test@test.com", password: "password", password_confirmation:"password")
       authenticate = User.authenticate_with_credentials("  test@test.com ",user.password)
