@@ -6,13 +6,21 @@ Developed by [Lighthouse Labs](https://www.lighthouselabs.ca/), completed by Esz
 
 ## Project Screenshots
 
-###[Main Page](https://github.com/eegyudt/jungle-rails/blob/master/docs/Jungle_rails_main.PNG)
+### Main Page
 
-###[Product Page](https://github.com/eegyudt/jungle-rails/blob/master/docs/Jungle_rails_product.PNG)
+![Main Page](https://github.com/eegyudt/jungle-rails/blob/master/docs/Jungle_rails_main.PNG)
 
-###[Cart](https://github.com/eegyudt/jungle-rails/blob/master/docs/Jungle_rails_cart.PNG)
+### Product Page
 
-###[Admin Sales Page](https://github.com/eegyudt/jungle-rails/blob/master/docs/Jungle_rails_admin_sales.PNG)
+![Product Page](https://github.com/eegyudt/jungle-rails/blob/master/docs/Jungle_rails_product.PNG)
+
+### Cart
+
+![Cart](https://github.com/eegyudt/jungle-rails/blob/master/docs/Jungle_rails_cart.PNG)
+
+### Admin Sales Page
+
+![Admin Sales Page](https://github.com/eegyudt/jungle-rails/blob/master/docs/Jungle_rails_admin_sales.PNG)
 
 
 ## Setup
