@@ -1,6 +1,8 @@
 <article>
   <%= link_to product_path(product) do %>
+  <div class="product_link">
     <%= image_tag product.image.thumb.url , alt: product.name %>
+  </div>
     <h1>
       <span><%= product.name %></span>
       <span><%= humanized_money_with_symbol product.price %></span>
@@ -19,7 +21,7 @@
   <% else %>
     <%= button_to add_item_cart_path(product_id: product.id), class: 'btn' ,
     method: :post do %>
-      <%= fa_icon "shopping-cart", text: 'Add' %> 
+      <%= fa_icon "shopping-cart", text: 'Add', class: "cart-count" %> 
     <% end %>
     <% end %>
   </div>
